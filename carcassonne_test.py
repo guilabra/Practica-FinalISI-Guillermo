@@ -45,6 +45,20 @@ No es necesario incluir mas.
         jugadores = ['Paco']
         self.assertFalse(Partida().num_jug_correcto(jugadores))
 
+    #G Test para comprobar que se devuelven los nombres correctamente
+    def test_comprobar_devuelve_nombres(self):
+        nombre1 = 'Diego'
+        edad1 = '19'
+        jugador1 = [nombre1, edad1]
+
+        nombre2 = 'Guillermo'
+        edad2 = '23'
+        jugador2 = [nombre2, edad2]
+
+        jugadores = [jugador1, jugador2]
+
+        self.assertEqual(['Diego', 'Guillermo'], Partida().devuelve_nombres_jugadores(jugadores))
+
     # Test que comprueba que los nombres no se repiten
     def test_comprobar_nombres(self):
         jugadores = ['Paco','Ana','Maria']

@@ -30,6 +30,14 @@ class Partida:
         else:
             return True
 
+    #G Necesito esta funcion al meter a cada jugador nombre y edad.
+    def devuelve_nombres_jugadores(self, jugadores):
+        lista_nombres_jugadores = []
+
+        for jugador in jugadores:
+            lista_nombres_jugadores.append(jugador[0])
+        return lista_nombres_jugadores
+
     # Comprueba que el nombre de los jugadores sea correcto
     def nombres_jug_correcto(self, nombres_jugadores):
         # Cuento la frecuencia de repeticion de los nombres
