@@ -144,6 +144,24 @@ class Partida:
         self.lista_turnos = self.asignar_turnos(self.jugadores)  # orden de los turnos de los jugadores
         return self
 
+    # Inicializacion de la partida con el nuevo orden
+    def inicializar_actualizado(self, jugadores):
+        if not self.num_jug_correcto(jugadores):
+            return "Numero de jugadores incorrecto. Solo pueden jugar entre 2 y 4 personas"
+        nombres_jugadores = self.devuelve_nombres_jugadores(jugadores)
+        if not self.nombres_jug_correcto(nombres_jugadores):
+            return "No se puede repetir el nombre de dos jugadores"
+        self.turno = 0
+        jugador_mas_joven = self.jugador_mas_joven(jugadores)
+        self.jugadores = self.inicializar_jugadores_en_orden(jugador_mas_joven, jugadores)
+        self.baraja = self.inicializar_baraja()  # baraja = fichas que aun se pueden jugar
+        random.shuffle(self.baraja)  # aleatorizo la baraja
+        self.tablero = self.inicializar_tablero()  # tablero = fichas que ya se han jugado
+        self.caminos_encontrados = []  # lista con los caminos que se completaron
+        self.monasterios_encontrados = []  # lista con los caminos ya completados
+        self.lista_turnos = self.asignar_turnos(self.jugadores)  # orden de los turnos de los jugadores
+        return self
+
     # Busca el indice en el que se encuentra el jugador que se pasa en self.jugadores
     def buscar_ind_jugador(self, jugador_buscado):
         indice = None

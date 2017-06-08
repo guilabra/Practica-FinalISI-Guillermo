@@ -25,3 +25,6 @@ al haber metido nombre y edad en cada jugador para realizar otro método inicial
 5)El método inicializar_jugadores_en_orden y el test_comprobar_inicializar_jugadores_en_orden.
 Para inicializar jugadores, el jugador mas joven se inicializa en la primera posición y los
 demás jugadores, de forma aleatoria.
+
+6)El método inicializar_actualizado y el test_comprobar_indice_jugador_actualizado. Vemos
+que con el nuevo método inicializar_actualizado nos coge el indice del jugador correctamente.
