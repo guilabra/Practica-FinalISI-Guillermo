@@ -21,3 +21,7 @@ test busco un correcto funcionamiento del shuffle.
 
 4)El método devuelve_nombres_jugadores y su test correspondiente. Necesito este método
 al haber metido nombre y edad en cada jugador para realizar otro método inicializar.
+
+5)El método inicializar_jugadores_en_orden y el test_comprobar_inicializar_jugadores_en_orden.
+Para inicializar jugadores, el jugador mas joven se inicializa en la primera posición y los
+demás jugadores, de forma aleatoria.

@@ -60,6 +60,16 @@ class Partida:
 
         return jugadores
 
+    #G Inicializa los jugadores, en la primera posicion el mas joven y luego los demas aleatoriamente
+    def inicializar_jugadores_en_orden(self, jugador_mas_joven, jugadores):
+        lista_jugadores = []
+        lista_jugadores.append(Jugador(jugador_mas_joven[0]))
+        jugadores.remove(jugador_mas_joven)
+        random.shuffle(jugadores)
+        for jugador in jugadores:
+            lista_jugadores.append(Jugador(jugador[0]))
+        return lista_jugadores
+
     #G Inicializa la lista por la edad de los jugadores.
     def jugador_mas_joven(self, jugadores):
         i = 0

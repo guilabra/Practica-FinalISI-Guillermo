@@ -618,6 +618,27 @@ El jugador mas joven se llama Felipe. Es un adolescente de 16.
         #es el mismo que el nombre del jugador del turno 3 (al haber 3 jugadores)
         self.assertEqual(turnos_jugadores[i][0], turnos_jugadores[i+3][0])
 
+    #G Test que comprueba que se inicializan los jugadores correctamente.
+    def test_comprobar_inicializar_jugadores_en_orden(self):
+
+        nombre1 = 'Juan'
+        edad1 = '22'
+        jugador1 = [nombre1, edad1]
+
+        nombre2 = 'Pedro'
+        edad2 = '19'
+        jugador2 = [nombre2, edad2]
+
+        nombre3 = 'Felipe'
+        edad3 = '16'
+        jugador3 = [nombre3, edad3]
+
+        jugador = Partida().jugador_mas_joven([jugador1, jugador2, jugador3])
+        orden_jugadores = Partida().inicializar_jugadores_en_orden(jugador, [jugador1, jugador2, jugador3])
+
+        #Primer nombre el jugador mas joven y luego aleatorio.
+        self.assertEqual(orden_jugadores[0].nombre, 'Felipe')
+
 
   #Test para comprobar si un jugador puede introducir un meeple a una pieza del tablero
     def test_introducir_meeple(self):
