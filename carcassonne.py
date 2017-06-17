@@ -65,7 +65,8 @@ class Partida:
         lista_jugadores = []
         lista_jugadores.append(Jugador(jugador_mas_joven[0]))
         jugadores.remove(jugador_mas_joven)
-        random.shuffle(jugadores)
+        #random.shuffle(jugadores)
+        jugadores = self.jugador_decide_orden(jugadores)
         for jugador in jugadores:
             lista_jugadores.append(Jugador(jugador[0]))
         return lista_jugadores
@@ -144,7 +145,7 @@ class Partida:
         self.lista_turnos = self.asignar_turnos(self.jugadores)  # orden de los turnos de los jugadores
         return self
 
-    # Inicializacion de la partida con el nuevo orden
+    # G Inicializacion de la partida con el nuevo orden
     def inicializar_actualizado(self, jugadores):
         if not self.num_jug_correcto(jugadores):
             return "Numero de jugadores incorrecto. Solo pueden jugar entre 2 y 4 personas"

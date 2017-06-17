@@ -723,6 +723,31 @@ El jugador mas joven se llama Felipe. Es un adolescente de 16.
         indice_jugador = partida.buscar_ind_jugador(jugador.nombre)
         self.assertEqual(0, indice_jugador)
 
+    #G Test que comprueba que la funcion buscar_ind_jugador funciona correctamente con
+    #el nuevo inicializar_actualizado
+    def test_comprobar_indice_jugador_actualizado2(self):
+        nombre1 = 'Paco'
+        edad1 = '29'
+        jugador1 = [nombre1, edad1]
+
+        nombre2 = 'Ana'
+        edad2 = '32'
+        jugador2 = [nombre2, edad2]
+
+        nombre3 = 'Maria'
+        edad3 = '25'
+        jugador3 = [nombre3, edad3]
+
+        nombre4 = 'Pepe'
+        edad4 = '38'
+        jugador4 = [nombre4, edad4]
+
+        jugadores = [jugador1, jugador2, jugador3, jugador4]
+        partida = Partida().inicializar_actualizado(jugadores)
+        jugador = Jugador('Pepe')
+        indice_jugador = partida.buscar_ind_jugador(jugador.nombre)
+        self.assertNotEqual(0, indice_jugador)
+
     # Test que comprueba si la funcion jugadores_con_mas_meeples funciona bien
     def test_jugador_con_mas_meeples(self):
         partida = Partida().inicializar(['Paco','Ana','Maria','Pepe'])
